@@ -50,7 +50,7 @@ public class WhatsappRepository {
         {
             //String admin = users.get(0).getName();
             String groupname = users.get(1).getName();
-            System.out.println(groupname);//may or may not be required
+            //System.out.println(groupname);//may or may not be required
             Group group = new Group();
             group.setName(groupname);
             group.setNumberOfParticipants(users.size());
@@ -62,7 +62,7 @@ public class WhatsappRepository {
             //String admin = users.get(0).getName();
             groupcount += 1;
             String groupname = "Group "+ groupcount;
-            System.out.println(groupname);//may or may not be required
+            //System.out.println(groupname);//may or may not be required
             Group group = new Group();
             group.setName(groupname);
             group.setNumberOfParticipants(users.size());

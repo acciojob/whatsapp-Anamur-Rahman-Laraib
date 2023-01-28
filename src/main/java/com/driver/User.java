@@ -4,6 +4,11 @@ public class User {
     private String name;
     private String mobile;
 
+    public User(String name, String mobile) {
+        this.name = name;
+        this.mobile = mobile;
+    }
+
     public String getName() {
         return name;
     }
@@ -18,15 +23,5 @@ public class User {
 
     public void setMobile(String mobile) {
         this.mobile = mobile;
-    }
-
-    public User(String name, String mobile)//constructor with all args
-    {
-        this.name = name;
-        this.mobile = mobile;
-    }
-
-    public User() //no args constructor
-    {
     }
 }

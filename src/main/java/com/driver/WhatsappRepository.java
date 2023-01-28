@@ -20,8 +20,8 @@ public class WhatsappRepository {
     private int messageId;
 
     public WhatsappRepository(){
-        this.groupUserMap = new HashMap<Group, List<User>>();
         this.groupMessageMap = new HashMap<Group, List<Message>>();
+        this.groupUserMap = new HashMap<Group, List<User>>();
         this.senderMap = new HashMap<Message, User>();
         this.adminMap = new HashMap<Group, User>();
         this.userMobile = new HashSet<>();
@@ -29,17 +29,14 @@ public class WhatsappRepository {
         this.messageId = 0;
     }
 
-    public String creteUser(String name, String mobile) throws Exception {
-        User user=new User(name,mobile);
-        if(userMobile.contains(mobile)){
+    public String createUser(String name,String number) throws Exception {
+        User user=new User(name,number);
+        if(userMobile.contains(number)){
             throw new Exception("User already exists");
         }
-        userMobile.add(mobile);
+        userMobile.add(number);
         return"SUCCESS";
     }
-
-
-
 
     public Group createGroup(List<User> users) {
         int n=users.size();
@@ -56,14 +53,13 @@ public class WhatsappRepository {
         return group;
     }
 
-
     public int createMessage(String content) {
         messageId+=1;
         Message message=new Message(messageId,content,new Date());
         return messageId;
     }
 
-    public int sendMessage(Message message, User sender, Group group) throws Exception{
+    public int sendMessage(Message message, User sender, Group group) throws Exception {
         if(!groupUserMap.containsKey(group)){
             throw new Exception("Group does not exist");
         }
@@ -84,8 +80,7 @@ public class WhatsappRepository {
         return groupMessageMap.get(group).size();
     }
 
-
-    public String changeAdmin(User approver, User user, Group group) throws Exception{
+    public String changeAdmin(User approver, User user, Group group) throws Exception {
         if(!groupUserMap.containsKey(group)){
             throw new Exception("Group does not exist");
         }

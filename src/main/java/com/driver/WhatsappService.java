@@ -8,13 +8,11 @@ import java.util.List;
 
 @Service
 public class WhatsappService {
-    @Autowired
-    WhatsappRepository whatsappRepository;
-    public String createUser(String name, String mobile) throws Exception{
-        return whatsappRepository.creteUser(name, mobile);
+    WhatsappRepository whatsappRepository=new WhatsappRepository();
+    public String createUser(String name,String number) throws Exception {
+        return whatsappRepository.createUser(name,number);
     }
-
-    public Group createGroup(List<User> users) {
+    public Group createGroup(List<User> users){
         return whatsappRepository.createGroup(users);
     }
 
@@ -23,11 +21,11 @@ public class WhatsappService {
     }
 
     public int sendMessage(Message message, User sender, Group group) throws Exception {
-        return whatsappRepository.sendMessage(message, sender, group);
+        return whatsappRepository.sendMessage(message,sender,group);
     }
 
-    public String changeAdmin(User approver, User user, Group group) throws Exception{
-        return whatsappRepository.changeAdmin(approver, user, group);
+    public String changeAdmin(User approver, User user, Group group) throws Exception {
+        return whatsappRepository.changeAdmin(approver,user,group);
     }
 
   /*  public int removeUser(User user) {

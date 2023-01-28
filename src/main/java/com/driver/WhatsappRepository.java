@@ -99,11 +99,11 @@ public class WhatsappRepository {
         return"SUCCESS";
     }
 
-    public int removeUser(User user) {
+  /*  public int removeUser(User user) {
         return 0;
     }
 
     public String findMessage(Date start, Date end, int k) {
         return "null";
-    }
+    }*/
 }

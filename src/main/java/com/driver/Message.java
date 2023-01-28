@@ -12,10 +12,10 @@ public class Message {
     public Message() {
     }
 
-    public Message(int id, String content) {
-        this.id = id;
+    public Message(int id, String content, Date timestamp) {
+        this.id=id;
         this.content = content;
-        //this.timestamp = timestamp;
+        this.timestamp = new Date();
     }
 
 
@@ -40,6 +40,6 @@ public class Message {
     }
 
     public void setTimestamp(Date timestamp) {
-        this.timestamp = new Date(2023,01,28);
+        this.timestamp = timestamp;
     }
 }

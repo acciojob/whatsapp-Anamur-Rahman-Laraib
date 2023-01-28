@@ -7,7 +7,7 @@ import java.util.Date;
 public class Message {
     private int id;
     private String content;
-    private Date timestamp = new Date(2023,01,28);
+    private Date timestamp;
 
     public Message() {
     }
@@ -15,7 +15,9 @@ public class Message {
     public Message(int id, String content, Date timestamp) {
         this.id = id;
         this.content = content;
+        this.timestamp = timestamp;
     }
+
 
     public int getId() {
         return id;
@@ -38,6 +40,6 @@ public class Message {
     }
 
     public void setTimestamp(Date timestamp) {
-        this.timestamp = timestamp;
+        this.timestamp = new Date(2023,01,28);
     }
 }

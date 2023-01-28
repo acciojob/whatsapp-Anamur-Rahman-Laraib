@@ -77,6 +77,7 @@ public class WhatsappRepository {
         Message message = new Message();
         message.setId(messageId);
         message.setContent(content);
+        message.setTimestamp(message.getTimestamp());
         return messageId;
     }
 

@@ -1,7 +1,5 @@
 package com.driver;
 
-
-
 import java.util.Date;
 
 public class Message {
@@ -9,7 +7,10 @@ public class Message {
     private String content;
     private Date timestamp;
 
-    public Message() {
+
+    public Message(int id, String content) {
+        this.id = id;
+        this.content = content;
     }
 
     public Message(int id, String content, Date timestamp) {
@@ -17,7 +18,6 @@ public class Message {
         this.content = content;
         this.timestamp = new Date();
     }
-
 
     public int getId() {
         return id;
